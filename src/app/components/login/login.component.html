@@ -5,11 +5,3 @@
 <div>
   <button (click)="login()">Ingresar</button>
 </div>
-
-<div *ngIf="loginExitoso">
-    <app-bienvenido></app-bienvenido>
-  </div>
-  <div *ngIf="!loginExitoso">
-    <app-error></app-error>
-  </div>
-  
