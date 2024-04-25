@@ -1,0 +1,192 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+  
+.form {
+    opacity: 0.87;
+    box-sizing: border-box;
+    height: 18.75em;
+    width: 25em;    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    font-family: "Bebas Neue", Arial;
+    color: #FFFFFF;
+}  
+
+.form > div {
+  height: 6.25em;
+  width: 100%;
+}
+
+.username {
+  background-color: #FF204E;
+}
+
+.username::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-style: solid;
+  border-width: 0.5em 0.469em 0 0.469em;
+  border-color: #FF204E transparent transparent transparent;
+  top: 6.25em;
+  left: 50%;
+  margin-left: -0.496em;
+}
+
+.password {
+  background-color: #5D0E41;
+}
+
+.password::after {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-style: solid;
+  border-width: 0.5em 0.469em 0 0.469em;
+  border-color: #5D0E41 transparent transparent transparent;
+  top: 12.5em;
+  left: 50%;
+  margin-left: -0.496em;
+}
+
+.login {
+  background-color: #00224D;
+  display: table;
+}
+
+.login span {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-size:3em;
+  cursor: pointer;
+}
+
+input {
+  height: 1.25em;
+  width: 8.125em;
+  font-size: 2em;
+  text-align:center;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: transparent;
+  border:0.033em #fff solid;
+  margin-left: 2.1875em;
+  margin-top: 1em;
+  font-family: "Bebas Neue", Arial;
+}
+
+::placeholder {
+  color: #fff;
+}
+
+::-moz-placeholder {
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  color: #fff;
+}
+
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+
+.frame {
+  width: 400px;
+  height: 400px;
+	overflow: hidden;
+  color: #415868;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+}
+
+.modal {
+  position: absolute;
+	width: 280px;
+	height: 210px;
+  top: 95px;
+  left: 60px;
+	background: #fff;
+	border-radius: 3px;
+	text-align: center;
+	overflow: hidden;
+	animation: show-modal .7s ease-in-out;
+	
+	&.hide {
+		animation: hide-modal .6s ease-in-out both;
+	}
+
+	.title {
+		display: block;
+		font-size: 18px;
+		line-height: 24px;
+		font-weight: 400;
+		margin: 14px 0 5px 0;
+	}
+	
+	p {
+		font-size: 14px;
+		font-weight: 300;
+		line-height: 19px;
+		margin: 0;
+		padding: 0 30px;
+	}
+	
+	.button {
+		position: absolute;
+		height: 40px;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: #F65656;
+		color: #fff;
+		line-height: 40px;
+		font-size: 14px;
+		font-weight: 400;
+		cursor: pointer;
+		transition: background .3s ease-in-out;
+		
+		&:hover {
+			background: #EC3434;
+		}
+		
+	}
+	
+}
+
+@keyframes show-modal {
+	0% {
+		transform: scale(0);
+	}
+	60% {
+		transform: scale(1.1);
+	}
+	80% {
+		transform: scale(.95);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@keyframes hide-modal {
+	0% {
+		transform: scale(1);
+	}
+	20% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(0);
+	}
+}
+
