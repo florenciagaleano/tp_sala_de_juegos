@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
-import { ErrorComponent } from './components/error/error.component';
 import { CommonModule } from '@angular/common';
 
 @Component({

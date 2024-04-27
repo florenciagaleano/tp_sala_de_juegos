@@ -2,14 +2,13 @@ import { Component } from '@angular/core';
 import { Usuario } from '../../models/usuario';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ErrorComponent } from '../error/error.component';
 import { Router } from '@angular/router';
 import { HomeComponent } from '../home/home.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,CommonModule,HomeComponent,ErrorComponent],
+  imports: [FormsModule,CommonModule,HomeComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

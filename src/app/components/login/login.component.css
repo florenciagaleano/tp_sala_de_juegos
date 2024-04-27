@@ -1,192 +1,160 @@
-body {
-    padding: 0;
-    margin: 0;
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0B4gaVc.ttf) format('truetype');
 }
-  
-.form {
-    opacity: 0.87;
-    box-sizing: border-box;
-    height: 18.75em;
-    width: 25em;    
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-transform: uppercase;
-    font-family: "Bebas Neue", Arial;
-    color: #FFFFFF;
-}  
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0B4gaVc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: normal;
+  src: url(https://fonts.gstatic.com/s/opensans/v40/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1x4gaVc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: url(https://fonts.gstatic.com/s/opensanscondensed/v23/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff1GhDuXMQg.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: url(https://fonts.gstatic.com/s/opensanscondensed/v23/z7NFdQDnbTkabZAIOl9il_O6KJj73e7Ff0GmDuXMQg.ttf) format('truetype');
+}
 
-.form > div {
-  height: 6.25em;
+
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing:border-box;
+}
+
+#background {
   width: 100%;
+  height: 100vh;
+  background-size:cover;
+  background-image: url(../../../assets/login-desktop.jpg);
+  background-repeat: no-repeat;
 }
 
-.username {
-  background-color: #FF204E;
+body {
+  font-family: 'open sans', helvetica, arial, sans;
 }
 
-.username::after {
-  content: "";
-  width: 0px;
-  height: 0px;
+body {
+  font-family: 'open sans', helvetica, arial, sans;
+}
+
+.log-form {
+  width: 30%;
+  min-width: 320px;
+  max-width: 475px;
+  background: #fff;
   position: absolute;
-  border-style: solid;
-  border-width: 0.5em 0.469em 0 0.469em;
-  border-color: #FF204E transparent transparent transparent;
-  top: 6.25em;
-  left: 50%;
-  margin-left: -0.496em;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.25);
 }
 
-.password {
-  background-color: #5D0E41;
+.log-form form {
+  display: block;
+  width: 100%;
+  padding: 2em;
 }
 
-.password::after {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-style: solid;
-  border-width: 0.5em 0.469em 0 0.469em;
-  border-color: #5D0E41 transparent transparent transparent;
-  top: 12.5em;
-  left: 50%;
-  margin-left: -0.496em;
+.log-form h2 {
+  color: #5d5d5d;
+  font-family: 'open sans condensed';
+  font-size: 1.35em;
+  display: block;
+  background: #2a2a2a;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 0.75em 1em 0.75em 1.5em;
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.05);
+  border: 1px solid #1d1d1d;
+  margin: 0;
+  font-weight: 200;
 }
 
-.login {
-  background-color: #00224D;
-  display: table;
+.log-form input {
+  display: block;
+  margin: auto auto;
+  width: 100%;
+  margin-bottom: 2em;
+  padding: 0.5em 0;
+  border: none;
+  border-bottom: 1px solid #eaeaea;
+  padding-bottom: 1.25em;
+  color: #757575;
 }
 
-.login span {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  font-size:3em;
-  cursor: pointer;
+.log-form input:focus {
+  outline: none;
 }
 
-input {
-  height: 1.25em;
-  width: 8.125em;
-  font-size: 2em;
-  text-align:center;
-  border: 0;
-  outline: 0;
-  color: #fff;
-  background: transparent;
-  border:0.033em #fff solid;
-  margin-left: 2.1875em;
-  margin-top: 1em;
-  font-family: "Bebas Neue", Arial;
+.log-form .btn {
+  display: inline-block;
+  background: #7c32ea;
+  border: 1px solid #7c32ea;
+  padding: 0.5em 2em;
+  color: white;
+  margin-right: 0.5em;
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.2);
 }
 
-::placeholder {
-  color: #fff;
+.log-form .btn:hover {
+  background: #a97bed;
 }
 
-::-moz-placeholder {
-  color: #fff;
+.log-form .btn:active {
+  background: #7c32ea;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
-:-ms-input-placeholder {
-  color: #fff;
+.log-form .btn:focus {
+  outline: none;
 }
 
-::-webkit-input-placeholder {
-  color: #fff;
+.log-form .forgot {
+  color: #6e22e0;
+  line-height: 0.5em;
+  position: relative;
+  top: 2.5em;
+  text-decoration: none;
+  font-size: 0.75em;
+  margin: 0;
+  padding: 0;
+  float: right;
+}
+
+.log-form .forgot:hover {
+  color: #7c32ea;
 }
 
 
-.frame {
-  width: 400px;
-  height: 400px;
-	overflow: hidden;
-  color: #415868;
-	font-family: 'Open Sans', Helvetica, sans-serif;
+@media screen and (max-width: 480px){
+  #background{
+    background-image: url(../../../assets/login-mobile.jpg);
+  }
+  
 }
 
-.modal {
-  position: absolute;
-	width: 280px;
-	height: 210px;
-  top: 95px;
-  left: 60px;
-	background: #fff;
-	border-radius: 3px;
-	text-align: center;
-	overflow: hidden;
-	animation: show-modal .7s ease-in-out;
-	
-	&.hide {
-		animation: hide-modal .6s ease-in-out both;
-	}
 
-	.title {
-		display: block;
-		font-size: 18px;
-		line-height: 24px;
-		font-weight: 400;
-		margin: 14px 0 5px 0;
-	}
-	
-	p {
-		font-size: 14px;
-		font-weight: 300;
-		line-height: 19px;
-		margin: 0;
-		padding: 0 30px;
-	}
-	
-	.button {
-		position: absolute;
-		height: 40px;
-		bottom: 0;
-		left: 0;
-		right: 0;
-		background: #F65656;
-		color: #fff;
-		line-height: 40px;
-		font-size: 14px;
-		font-weight: 400;
-		cursor: pointer;
-		transition: background .3s ease-in-out;
-		
-		&:hover {
-			background: #EC3434;
-		}
-		
-	}
-	
-}
 
-@keyframes show-modal {
-	0% {
-		transform: scale(0);
-	}
-	60% {
-		transform: scale(1.1);
-	}
-	80% {
-		transform: scale(.95);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
 
-@keyframes hide-modal {
-	0% {
-		transform: scale(1);
-	}
-	20% {
-		transform: scale(1.1);
-	}
-	100% {
-		transform: scale(0);
-	}
-}
+
+
+
 
