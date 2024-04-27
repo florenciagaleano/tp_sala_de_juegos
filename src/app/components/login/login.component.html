@@ -3,11 +3,17 @@
 </head>
 <body id="background">
   <div class="log-form">
-    <h2>Ingresa a tu cuenta</h2>
-    <form (ngSubmit)="login()">
-      <input type="text" name="nombre" title="usuario" placeholder="Usuario" [(ngModel)]="usuario.nombre" />
-      <input type="password" name="clave" title="clave" placeholder="Clave" [(ngModel)]="usuario.clave" />
-      <button type="submit" class="btn">Ingresar</button>
+    <h2 id="ingresar">Ingresa a tu cuenta</h2>
+    <form (ngSubmit)="login()" class="form">
+      <div class="form-group">
+        <input type="text" name="nombre" title="usuario" placeholder="Usuario" [(ngModel)]="usuario.nombre" />
+      </div>
+      <div class="form-group">
+        <input type="password" name="clave" title="clave" placeholder="Clave" [(ngModel)]="usuario.clave" />  
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn">💟 Continuar 💟</button>
+      </div>
       <div *ngIf="loginExitoso == 0" class="error">
           <div class="alert alert-danger" style="margin-top: 15px; font-size: 15px;">
             No se reconoce la combinacion entre usuario y clave.
