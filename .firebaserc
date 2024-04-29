@@ -1,7 +1,15 @@
 {
   "projects": {
-    "tp_sala_de_juegos": "tp-sala-de-juegos-e4119"
+    "default": "tp-sala-de-juegos-e4119"
   },
-  "targets": {},
+  "targets": {
+    "tp-sala-de-juegos-e4119": {
+      "hosting": {
+        "tp-sala-de-juegos": [
+          "tp-sala-de-juegos-e4119"
+        ]
+      }
+    }
+  },
   "etags": {}
 }
