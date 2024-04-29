@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100&family=Jersey+10+Charted&family=Jersey+15&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@100&family=Jersey+10+Charted&family=Jersey+15&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
 *{
   margin: 0px;
@@ -73,6 +73,19 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: 2px 5px rgba(0, 0, 0, 0.25);
+}
+
+.btn-registro{
+  background: none;
+  color: rgb(205, 23, 171);
+  border:none;
+  padding: 15px;
+  font-weight: bold;
+}
+
+.btn-registro:hover{  
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 

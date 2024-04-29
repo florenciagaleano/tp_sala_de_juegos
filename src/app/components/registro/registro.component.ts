@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { Usuario } from '../../models/usuario';
-import { Auth, signInWithEmailAndPassword } from 'firebase/auth';
+import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+
 
 @Component({
   selector: 'app-registro',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './registro.component.html',
-  styleUrl: '../LoginComponent/login.component.css'
+  styleUrl: './registro.component.css'
 })
 export class RegistroComponent {
   usuario: Usuario = new Usuario("", "");
@@ -17,11 +19,11 @@ export class RegistroComponent {
   }
 
   registrarse() {
-    signInWithEmailAndPassword(this.auth, this.usuario.mail, this.usuario.clave).then((res) => {
-      //if (res.user.email !== null) this.loggedUser = res.user.email;
+    createUserWithEmailAndPassword(this.auth, this.usuario.mail, this.usuario.clave).then((res) => {
+      if (res.user.email !== null) this.usuario.mail = res.user.email;
+
     }).catch((e) => {
       this.error = 1;
     });
   }
-
 }

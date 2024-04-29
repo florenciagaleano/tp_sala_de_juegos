@@ -11,7 +11,7 @@ import { RegistroComponent } from '../registro/registro.component';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,CommonModule,HomeComponent,RegistroComponent],
+  imports: [FormsModule,CommonModule,HomeComponent],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -33,11 +33,11 @@ export class LoginComponent {
       addDoc(col, { "fecha": new Date(), "usuario": this.usuario.mail})
       this.loginExitoso = 1;
       this.router.navigate(['/home']);
-    }).catch((e) => console.log(e)){
+    }).catch((e) => {
       this.loginExitoso = 0;
-      console.log("fallo");
-
-    }
+      console.log(e);
+    });
+    
   }
 
   CloseSession(){
