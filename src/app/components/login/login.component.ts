@@ -1,17 +1,14 @@
 import { Component } from '@angular/core';
 import { Usuario } from '../../models/usuario';
-import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
 import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
 import { Auth, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
-import { RegistroComponent } from '../registro/registro.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule,CommonModule,HomeComponent],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })

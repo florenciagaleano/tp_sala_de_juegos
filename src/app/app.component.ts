@@ -3,11 +3,12 @@ import { Router, RouterOutlet } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { AuthModule } from '@angular/fire/auth';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,LoginComponent,FormsModule,CommonModule],
+  imports: [RouterOutlet,FormsModule,CommonModule,AuthModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

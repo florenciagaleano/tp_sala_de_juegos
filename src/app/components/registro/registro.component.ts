@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Usuario } from '../../models/usuario';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
+import { NgIf } from '@angular/common';
 
 
 @Component({
