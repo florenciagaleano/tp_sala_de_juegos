@@ -74,15 +74,19 @@ input {
   box-shadow: 2px 5px rgba(0, 0, 0, 0.25);
 }
 
-.btn-registro{
+.container{
+  text-align: center;
+}
+
+.btn-registro, .btn-invitado, span{
   background: none;
   color: rgb(205, 23, 171);
   border:none;
-  padding: 15px;
+  padding: 5px;
   font-weight: bold;
 }
 
-.btn-registro:hover{  
+.btn-registro:hover, .btn-invitado:hover{  
   cursor: pointer;
   text-decoration: underline;
 }

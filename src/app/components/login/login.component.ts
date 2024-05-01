@@ -50,6 +50,11 @@ export class LoginComponent {
     this.router.navigate(['/registro']);
   }
 
+  entrarComoInvitado(){
+    this.usuario.mail = 'invitado@gmail.com';
+    this.usuario.clave = '123456'
+  }
+
   closeError(){
     this.loginExitoso = -1;
   }

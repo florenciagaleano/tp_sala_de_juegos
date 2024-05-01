@@ -14,7 +14,12 @@
       <div class="form-group">
         <input type="password" name="clave" title="clave" placeholder="Clave" [(ngModel)]="usuario.clave" />  
       </div>
-      <button class="btn-registro" type="submit" (click)="registrarse()">No tenes usuario? Registrate</button>
+
+      <div class="container">
+        <button class="btn-registro" type="submit" (click)="registrarse()">No tenes usuario? Registrate</button>
+        <span>|</span>
+        <button class="btn-invitado" type="submit" (click)="entrarComoInvitado()">Entrar como invitado</button>  
+      </div>
       <div class="form-group">
         <button type="submit" class="btn">💟 Continuar 💟</button>
       </div>
