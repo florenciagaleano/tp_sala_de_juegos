@@ -82,11 +82,18 @@ input {
   font-weight: bold;
 }
 
-.btn-registro:hover{  
+button:hover{  
   cursor: pointer;
   text-decoration: underline;
 }
 
+#btn-go-back{
+  background: none;
+  color: rgb(205, 23, 171);
+  border:none;
+  padding: 5px;
+  font-weight: bold;
+}
 
 @media screen and (max-width: 480px){
   #background{

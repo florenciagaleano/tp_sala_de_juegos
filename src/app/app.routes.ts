@@ -8,10 +8,10 @@ import { RegistroComponent } from './components/registro/registro.component';
 export const routes: Routes = [
     { path: '', redirectTo: '/login', pathMatch: "full" },
     { path: 'login', component: LoginComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'quien-soy', component: QuienSoyComponent },
-    { path: 'registro', component: RegistroComponent },
-
+    { path: 'home', loadComponent: () => import('./components/home/home.component').then(mod => mod.HomeComponent)},
+    { path: 'quien-soy', loadComponent: () => import('./components/quien-soy/quien-soy.component').then(mod => mod.QuienSoyComponent)},
+    { path: 'registro', loadComponent: () => import('./components/registro/registro.component').then(mod => mod.RegistroComponent)},
+  
     { path: '**', component: PageNotFoundComponent},
     
 ];
