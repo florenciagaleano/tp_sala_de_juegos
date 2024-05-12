@@ -1,0 +1,42 @@
+
+#background {
+    width: 100%;
+    height: 100vh;
+    background-size:cover;
+    background-image: url(../../../assets/login-desktop2.jpg);
+    background-repeat: no-repeat;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-size:cover;
+    background-image: url(../../../assets/login-desktop2.jpg);
+    background-repeat: no-repeat;
+}
+
+div {
+    text-align: center;
+}  
+
+#teclado{
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.btn-teclado{
+    border-radius: 5px;
+    font-family: Courier New;
+    color: #ffffff;
+    font-size: 20px;
+    background: #f766d0;
+    padding: 10px 20px 10px 20px;
+    margin: 5px;
+    text-decoration: none;  
+}
+
+.btn-teclado:hover{
+    cursor: pointer;
+    background: #f20cc4;
+}
