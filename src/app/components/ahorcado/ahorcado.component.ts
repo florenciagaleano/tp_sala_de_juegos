@@ -24,6 +24,7 @@ export class AhorcadoComponent {
   intentos = 0;
   gano = false;
   perdio = false;
+  intentosFallidos = "💗 💗 💗 💗 💗 💗 💗 💗 💗 "
   letras = [
     "a",
     "b",
@@ -55,11 +56,11 @@ export class AhorcadoComponent {
 
   enviarLetra(letra : string) {
     if (/^[a-zA-Z]$/.test(this.letra)) {
-      this.comprobar(this.letra.toUpperCase()); // Convertir a mayúsculas antes de enviar
+      this.comprobar(this.letra.toUpperCase());
     } else {
       console.log("Ingrese una letra válida.");
     }
-    this.letra = ''; // Limpiar el input después de enviar
+    this.letra = '';
   }
 
   comprobar(letra: string) {
@@ -73,12 +74,13 @@ export class AhorcadoComponent {
     }
     this.palabraOculta = palabraOcultaArreglo.join(" ");
     this.verificaGanador();
+    this.actualizarVidas();
   }
 
   verificaGanador() {
     const palabraArr = this.palabraOculta.split(" ");
     const palabraEvaluar = palabraArr.join("");
-
+    this.intentosFallidos
     if (palabraEvaluar === this.palabra) {
       this.gano = true;
       console.log("Usuario GANO");
@@ -89,6 +91,13 @@ export class AhorcadoComponent {
     }
   }
 
+  actualizarVidas(){
+    this.intentosFallidos = "";
+    for (let index = 0; index < 9 - this.intentos; index++) {
+      this.intentosFallidos += "💗 ";
+    }
+  }
+
   existeLetra(letra: string) {
     if (this.palabra.indexOf(letra) >= 0) {
       //console.log("La letra existe" + letra);
@@ -96,4 +105,5 @@ export class AhorcadoComponent {
       this.intentos++;
     }
   }
+
 }

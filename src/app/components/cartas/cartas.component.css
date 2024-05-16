@@ -7,20 +7,18 @@
     background-repeat: no-repeat;
 }
 
-body {
-    width: 100%;
-    height: 100vh;
-    background-size:cover;
-    background-image: url(../../../assets/login-desktop2.jpg);
-    background-repeat: no-repeat;
+body{
+    text-align: center;
 }
 
 #titulo{
+    padding-top: 15px;
     color: white;
     font-family: 'Jersey 10 Charted', sans-serif;
+    font-size: 50px;
 }
 
-#gano, #perdio{
+#perdio{
     background-color: rgba(238, 31, 190, 0.5);
     color: white;
     width: 300px;
@@ -33,36 +31,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-
-}
-
-div {
-    text-align: center;
-    color: white;
-}  
-
-#teclado{
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-}
-
-.btn-teclado{
-    border-radius: 5px;
-    color: #ffffff;
-    font-size: 30px;
-    background: #f766d0;
-    padding: 10px 20px 10px 20px;
-    margin: 5px;
-    text-decoration: none;  
-}
-
-.btn-teclado:hover{
-    cursor: pointer;
-    background: #f20cc4;
 }
 
 #intentos{
+    color: white;
     font-family: sans-serif;
     position: fixed;
     bottom: 0;
@@ -73,4 +45,20 @@ div {
     justify-content: center;
     align-items: center;
     background-color: rgba(238, 31, 190, 0.5);
+}
+
+.btn{
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 30px;
+    background: #f766d0;
+    padding: 10px 20px 10px 20px;
+    margin: 5px;
+    text-decoration: none;  
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.btn:hover{
+    cursor: pointer;
+    background: #f20cc4;
 }
