@@ -12,13 +12,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'ejercicio_2_v2';
-  loginExitoso: boolean = false;
+  title = 'tp_sala_de_juegos';
   constructor(private router: Router) {}
 
   goTo(path: string) {
     this.router.navigate([path]);
   }
-
 
 }

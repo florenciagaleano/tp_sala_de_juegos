@@ -29,7 +29,8 @@ export class RegistroComponent {
         this.usuario.mail = res.user.email;
         this.router.navigate(['/home']);
         this.errorMail = -1;
-        addDoc(col, { "fecha": new Date(), "usuario": this.usuario.mail})
+        addDoc(col, { "fecha": new Date(), "usuario": this.usuario.mail});
+        this.authService.guardarUsuario(this.usuario.mail);
       }
 
     }).catch((e) => {

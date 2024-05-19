@@ -31,7 +31,8 @@ export class LoginComponent {
     let col = collection(this.firestore, 'registros');
 
     this.authService.signIn(this.usuario.mail,this.usuario.clave).then((res) => {
-      addDoc(col, { "fecha": new Date(), "usuario": this.usuario.mail})
+      addDoc(col, { "fecha": new Date(), "usuario": this.usuario.mail});
+      this.authService.guardarUsuario(this.usuario.mail);
       this.loginExitoso = 1;
       this.router.navigate(['/home']);
     }).catch((e) => {
