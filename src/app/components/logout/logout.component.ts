@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-logout',
@@ -11,10 +12,11 @@ import { Router } from '@angular/router';
 })
 
 export class LogoutComponent {
-  constructor(private router: Router) {}
+
+  constructor(private authService : AuthService, private router: Router) {}
 
   goToLogin() {
-    console.log("deberia ir al login");
+    this.authService.signOut();
     this.router.navigate(["/login"]);
   }
 

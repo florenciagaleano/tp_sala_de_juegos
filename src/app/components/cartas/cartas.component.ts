@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CartasService } from '../../services/cartas.service';
+import { CartasService } from '../../services/cartas/cartas.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 

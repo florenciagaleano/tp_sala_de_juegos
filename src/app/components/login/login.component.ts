@@ -7,6 +7,7 @@ import { HomeComponent } from '../home/home.component';
 import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
 import { Auth, signInWithEmailAndPassword, signOut } from '@angular/fire/auth';
 import { RegistroComponent } from '../registro/registro.component';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +20,7 @@ export class LoginComponent {
   usuario: Usuario = new Usuario("", "");
   loginExitoso: number = -1;
 
-  constructor(private router: Router, private firestore : Firestore, public auth: Auth) {}
+  constructor(private router: Router, private firestore : Firestore, private authService : AuthService) {}
 
   goTo(path: string) {
     this.router.navigate([path]);
@@ -29,7 +30,7 @@ export class LoginComponent {
   login() {
     let col = collection(this.firestore, 'registros');
 
-    signInWithEmailAndPassword(this.auth, this.usuario.mail, this.usuario.clave).then((res) => {
+    this.authService.signIn(this.usuario.mail,this.usuario.clave).then((res) => {
       addDoc(col, { "fecha": new Date(), "usuario": this.usuario.mail})
       this.loginExitoso = 1;
       this.router.navigate(['/home']);
@@ -38,12 +39,6 @@ export class LoginComponent {
       console.log(e);
     });
     
-  }
-
-  CloseSession(){
-    signOut(this.auth).then(() => {
-      console.log(this.auth.currentUser?.email)
-    })
   }
 
   registrarse(){
@@ -60,3 +55,7 @@ export class LoginComponent {
   }
 
 }
+function res(value: any) {
+  throw new Error('Function not implemented.');
+}
+

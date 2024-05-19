@@ -1,0 +1,195 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+  }
+  
+  button {
+    position: fixed;
+    left: 90%;
+    bottom: 5%;
+    background-image: url('../../../assets/chat-icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border-radius: 90px;
+    border: none;
+  }
+  
+  .chat-box {
+    display: flex;
+    flex-direction: column;
+    width: 332px;
+    height: 434px;
+    border-radius: 10px;
+    background-color: #ffffff96;
+    padding: 16px;
+    z-index: 9999999;
+    position: fixed;
+    border-color: #b00287;
+    bottom: 120px;
+    right: 54px;
+    border-style: double;
+    box-shadow: rgb(0 0 0 / 10%) 0px 1px 6px, rgb(0 0 0 / 20%) 0px 2px 24px;
+  }
+  
+  .chat-header {
+    display: flex;
+    justify-content: flex-end;
+  }
+    
+  .message-box {
+    height: 316px;
+    width: 100%;
+    padding-right: 5px;
+    overflow: auto;
+  }
+  
+  .hi-there {
+    background-color: #7f8ac5;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 5px;
+  }
+  
+  .hi-there .p1 {
+    font-size: 20px;
+  }
+  
+  .hi-there .p2 {
+    font-size: 13px;
+  }
+  
+  .first-chat {
+    width: 200px;
+    float: right;
+    background-color: #4c5aa1;
+    padding: 10px;
+    margin: 14px 0px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  .first-chat p {
+    font-size: 12px;
+    overflow-wrap: break-word;
+  }
+  
+  .first-chat .arrow {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid #4c5aa1;
+    border-top: 9px solid #4c5aa1;
+    border-bottom: 9px solid transparent;
+    right: -172px;
+    bottom: -23px;
+    position: relative;
+    margin-top: -15px;
+  }
+  
+  .second-chat {
+    display: inline-block;
+  }
+  
+  .second-chat .circle {
+    background-color: #4c5aa1;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    float: left;
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  
+  .second-chat p {
+    font-size: 12px;
+    overflow-wrap: break-word;
+  }
+  
+  .second-chat p {
+    width: 200px;
+    float: left;
+    background-color: #ecf1fb;
+    padding: 12px;
+    margin: 0px 5px;
+    border-radius: 10px;
+    color: #000;
+  }
+  
+  .second-chat .arrow {
+    content: "";
+    width: 0px;
+    height: 0px;
+    border-right: 9px solid transparent;
+    border-left: 9px solid #ecf1fb;
+    border-top: 12px solid #ecf1fb;
+    border-bottom: 9px solid transparent;
+    margin-left: 40px;
+    margin-top: -2%;
+    display: inline-block;
+  }
+  
+  .input-box {
+    position: absolute;
+    font-size: 12px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0px 30px;
+    padding-bottom: 18px;
+    border-top: 1px solid lightgray;
+  }
+  
+  .input-box .write-reply {
+    float: left;
+  }
+  
+  .input-box .write-reply input[type="text"] {
+    border: none;
+    outline: none;
+    font-size: 14px;
+  }
+  
+  .input-box .send-button {
+    float: right;
+    border: none;
+    outline: none;
+  }
+  
+  .input-box .send-button button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .input-box .send-button button i {
+    color: grey;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .input-box .surveysparrow img {
+    width: 15px;
+    margin-bottom: -4px;
+  }
+  
+  .input-box .surveysparrow p {
+    display: inline;
+    font-size: 10px;
+    color: #636262;
+  }
+  
+  .input-box .surveysparrow {
+    position: relative;
+    bottom: 28px;
+    right: -65px;
+  }
+  

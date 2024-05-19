@@ -5,6 +5,7 @@ import { Auth, createUserWithEmailAndPassword } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { addDoc, collection, collectionData, Firestore } from '@angular/fire/firestore';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-registro',
@@ -17,19 +18,18 @@ export class RegistroComponent {
   usuario: Usuario = new Usuario("", "");
   errorMail: number = -1;
 
-  constructor(public auth: Auth, private router: Router,private firestore : Firestore) {
+  constructor(private authService : AuthService, private router: Router,private firestore : Firestore) {
   }
 
   registrarse() {
     let col = collection(this.firestore, 'registros');
 
-    createUserWithEmailAndPassword(this.auth, this.usuario.mail, this.usuario.clave).then((res) => {
+    this.authService.crearUsuario(this.usuario.mail, this.usuario.clave).then((res) => {
       if (res.user.email !== null) {
         this.usuario.mail = res.user.email;
         this.router.navigate(['/home']);
         this.errorMail = -1;
         addDoc(col, { "fecha": new Date(), "usuario": this.usuario.mail})
-
       }
 
     }).catch((e) => {
@@ -39,7 +39,6 @@ export class RegistroComponent {
   }
 
   goToLogin() {
-    console.log("deberia ir al login");
     this.router.navigate(["/login"]);
   }
 
