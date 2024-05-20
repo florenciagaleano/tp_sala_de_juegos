@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgxTouchKeyboardModule }  from 'ngx-touch-keyboard';
+import { LogoutComponent } from '../logout/logout.component';
+import { ChatComponent } from '../chat/chat.component';
 
 @Component({
   selector: 'app-ahorcado',
@@ -9,7 +11,9 @@ import { NgxTouchKeyboardModule }  from 'ngx-touch-keyboard';
   imports: [
     NgxTouchKeyboardModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    LogoutComponent,
+    ChatComponent
   ],
   providers: [],
   templateUrl: './ahorcado.component.html',

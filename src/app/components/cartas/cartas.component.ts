@@ -2,11 +2,13 @@ import { Component } from '@angular/core';
 import { CartasService } from '../../services/cartas/cartas.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { LogoutComponent } from '../logout/logout.component';
+import { ChatComponent } from '../chat/chat.component';
 
 @Component({
   selector: 'app-cartas',
   standalone: true,
-  imports: [FormsModule,CommonModule],
+  imports: [FormsModule,CommonModule,LogoutComponent,ChatComponent],
   templateUrl: './cartas.component.html',
   styleUrl: './cartas.component.css'
 })
