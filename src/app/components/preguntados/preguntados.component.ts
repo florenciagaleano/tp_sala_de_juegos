@@ -25,6 +25,7 @@ export class PreguntadosComponent {
   perdio = false;
   gano = false;
   contador = 0;
+  cargando = false;
 
   constructor(private peliculasService: PeliculasService, private router : Router) {}
 
@@ -42,11 +43,13 @@ export class PreguntadosComponent {
   }
 
   nuevaPregunta(){
+    this.cargando = true;
     this.peliculasService.getPreguntaConOpciones().subscribe((data) => {
       this.pregunta = data;
       this.opciones = data.opciones;
       this.imagen = data.imagen;
       this.correcta = data.correcta;
+      this.cargando = false;
     });
 
   }
