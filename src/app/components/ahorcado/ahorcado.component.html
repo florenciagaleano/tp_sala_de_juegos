@@ -32,12 +32,23 @@
       <div class="row" *ngIf="gano" id="gano">
         <div class="col text-center">
           <h1>Adivinaste! 🤗</h1>
+          <div class="container">
+            <button type="submit" (click)="goTo('home')">Ir a home</button>
+            <span>|</span>
+            <button type="submit" (click)="reiniciar()">Volver a jugar</button>  
+          </div>        
         </div>
       </div>
       <div class="row" *ngIf="perdio" id="perdio">
         <div class="col text-center">
           <h3>Perdiste 💔</h3>
           <h4>La palabra correcta era: {{palabra}}</h4>
+          <div class="container">
+            <button type="submit" (click)="goTo('home')">Ir a home</button>
+            <span>|</span>
+            <button type="submit" (click)="reiniciar()">Volver a jugar</button>  
+          </div>    
+    
         </div>
       </div>
       

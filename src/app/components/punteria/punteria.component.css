@@ -70,7 +70,7 @@ p{
 }
 
 
-.facil{
+.circulo{
     display:block !important; 
     background-color: rgb(139, 12, 174);
     width: 30px;
@@ -110,3 +110,16 @@ p{
     color:white;
     background-color: rgba(238, 31, 190, 0.5);
 }
+
+button, span{
+    background: none;
+    color: rgb(255, 255, 255);
+    border:none;
+    padding: 5px;
+    font-weight: bold;
+  }
+  
+button:hover{  
+    cursor: pointer;
+    text-decoration: underline;
+  }

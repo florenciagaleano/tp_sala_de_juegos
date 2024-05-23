@@ -19,6 +19,13 @@
   <div class="row" *ngIf="intentos == 9" id="perdio">
     <div class="col text-center">
       <h3>Perdiste 💔</h3>
+      <div class="container">
+        <button
+        class="button-resultados" type="submit" (click)="goTo('home')">Ir a home</button>
+        <span>|</span>
+        <button class="button-resultados" type="submit" (click)="reiniciar()">Volver a jugar</button>  
+      </div>    
+
     </div>
   </div>
   <app-logout></app-logout> 

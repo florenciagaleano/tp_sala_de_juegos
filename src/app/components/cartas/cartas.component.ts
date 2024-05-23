@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { LogoutComponent } from '../logout/logout.component';
 import { ChatComponent } from '../chat/chat.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cartas',
@@ -20,10 +21,19 @@ export class CartasComponent {
   mayorSeleccionado = false;
   perdio = false;
   
-  constructor(private cardService: CartasService) { }
+  constructor(private cardService: CartasService, private router : Router) { }
 
   ngOnInit(): void {
     this.getNewCard();
+  }
+
+  reiniciar(){
+    this.intentos = 0;
+    this.intentosFallidos = "💗 💗 💗 💗 💗 💗 💗 💗 💗 "
+    this.mayorSeleccionado = false;
+    this.perdio = false;
+    this.getNewCard();
+
   }
 
   async getNewCard() {
@@ -58,5 +68,11 @@ export class CartasComponent {
     }
   }
 
+
+  goTo(path: string = '') {
+    if (path === 'home') {
+      this.router.navigate(['/home']);
+    }
+  }
 
 }

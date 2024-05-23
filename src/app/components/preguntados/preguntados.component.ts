@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LogoutComponent } from '../logout/logout.component';
 import { ChatComponent } from '../chat/chat.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-preguntados',
@@ -25,7 +26,16 @@ export class PreguntadosComponent {
   gano = false;
   contador = 0;
 
-  constructor(private peliculasService: PeliculasService) {}
+  constructor(private peliculasService: PeliculasService, private router : Router) {}
+
+  reiniciar(){
+    this.perdio = false;
+    this.gano = false;
+    this.intentos = 0;
+    this.intentosFallidos = "💗 💗 💗 "
+
+    this.nuevaPregunta();
+  }
 
   ngOnInit() {
     this.nuevaPregunta();
@@ -61,6 +71,12 @@ export class PreguntadosComponent {
 
     for (let index = 0; index < 3 - this.intentos; index++) {
       this.intentosFallidos += "💗 ";
+    }
+  }
+
+  goTo(path: string = '') {
+    if (path === 'home') {
+      this.router.navigate(['/home']);
     }
   }
 

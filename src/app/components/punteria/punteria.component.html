@@ -16,7 +16,7 @@
             [ngClass]="classObjetivo"
           ></div>
       
-          <button id="start" (click)="ComenzarJuego()" [style]="comenzarJuego">
+          <button id="start" (click)="IniciarJuego()" [style]="comenzarJuego">
             Haz clic aquí para probar tu puntería
           </button>
         </div>
@@ -32,11 +32,21 @@
       <div class="row" *ngIf="gano" id="gano">
         <div class="col text-center">
           <h1>Ganaste! 🤗</h1>
+          <div class="container">
+            <button type="submit" (click)="goTo('home')">Ir a home</button>
+            <span>|</span>
+            <button type="submit" (click)="goTo()">Volver a jugar</button>  
+          </div>    
         </div>
       </div>
       <div class="row" *ngIf="perdio" id="perdio">
         <div class="col text-center">
-          <h3>Perdiste 💔</h3>
+          <h1>Perdiste 💔</h1>
+          <div class="container">
+            <button type="submit" (click)="goTo('home')">Ir a home</button>
+            <span>|</span>
+            <button type="submit" (click)="IniciarJuego()">Volver a jugar</button>  
+          </div>    
         </div>
       </div>
       
