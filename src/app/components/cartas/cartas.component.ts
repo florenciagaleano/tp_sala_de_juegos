@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CartasService } from '../../services/cartas/cartas.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { LogoutComponent } from '../logout/logout.component';
+import { LogoutComponent } from '../navbar/logout.component';
 import { ChatComponent } from '../chat/chat.component';
 import { Router } from '@angular/router';
 

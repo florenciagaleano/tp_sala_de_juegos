@@ -2,9 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NgxTouchKeyboardModule }  from 'ngx-touch-keyboard';
-import { LogoutComponent } from '../navbar/logout.component';
-import { ChatComponent } from '../chat/chat.component';
-import { Router } from '@angular/router';
+import { ChatComponent } from '../../chat/chat.component';
+import { LogoutComponent } from '../../navbar/logout.component';
 
 @Component({
   selector: 'app-ahorcado',
@@ -59,8 +58,6 @@ export class AhorcadoComponent {
     "z"
   ];
 
-  constructor(private router : Router){}
-
   enviarLetra(letra : string) {
     if (/^[a-zA-Z]$/.test(this.letra)) {
       this.comprobar(this.letra.toUpperCase());
@@ -113,19 +110,4 @@ export class AhorcadoComponent {
     }
   }
 
-  goTo(path: string = '') {
-    if (path === 'home') {
-      this.router.navigate(['/home']);
-    }
-  }
-
-  reiniciar(){
-    this.palabra = this.palabras[Math.floor(Math.random() * this.palabras.length)];
-    this.intentos = 0;
-    this.gano = false;
-    this.perdio = false;
-    this.intentosFallidos = "💗 💗 💗 💗 💗 💗 💗 💗 💗 ";
-    this.palabraOculta = "_ ".repeat(this.palabra.length);
-
-  }
 }

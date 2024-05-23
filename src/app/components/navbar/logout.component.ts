@@ -15,9 +15,13 @@ export class LogoutComponent {
 
   constructor(private authService : AuthService, private router: Router) {}
 
-  goToLogin() {
+  logout(){
     this.authService.signOut();
-    this.router.navigate(["/login"]);
+    this.goTo('login');
+  }
+  
+  goTo(ruta : string) {
+    this.router.navigate([ruta]);
   }
 
 }

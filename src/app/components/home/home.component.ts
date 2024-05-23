@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LogoutComponent } from '../logout/logout.component';
+import { LogoutComponent } from '../navbar/logout.component';
 import { Router } from '@angular/router';
 import { ChatComponent } from '../chat/chat.component';
 

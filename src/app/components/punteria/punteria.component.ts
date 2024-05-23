@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { LogoutComponent } from '../navbar/logout.component';
+import { ChatComponent } from '../chat/chat.component';
 
 @Component({
   selector: 'app-punteria',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule,LogoutComponent,ChatComponent],
   templateUrl: './punteria.component.html',
   styleUrl: './punteria.component.css'
 })

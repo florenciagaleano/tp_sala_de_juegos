@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
-import { PeliculasService } from '../../services/peliculas/peliculas.service';
 import { Observable } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { LogoutComponent } from '../navbar/logout.component';
-import { ChatComponent } from '../chat/chat.component';
-import { Router } from '@angular/router';
+import { LogoutComponent } from '../../navbar/logout.component';
+import { ChatComponent } from '../../chat/chat.component';
+import { PeliculasService } from '../../../services/peliculas/peliculas.service';
 
 @Component({
   selector: 'app-preguntados',
@@ -26,16 +25,7 @@ export class PreguntadosComponent {
   gano = false;
   contador = 0;
 
-  constructor(private peliculasService: PeliculasService, private router : Router) {}
-
-  reiniciar(){
-    this.perdio = false;
-    this.gano = false;
-    this.intentos = 0;
-    this.intentosFallidos = "💗 💗 💗 "
-
-    this.nuevaPregunta();
-  }
+  constructor(private peliculasService: PeliculasService) {}
 
   ngOnInit() {
     this.nuevaPregunta();
@@ -71,12 +61,6 @@ export class PreguntadosComponent {
 
     for (let index = 0; index < 3 - this.intentos; index++) {
       this.intentosFallidos += "💗 ";
-    }
-  }
-
-  goTo(path: string = '') {
-    if (path === 'home') {
-      this.router.navigate(['/home']);
     }
   }
 
