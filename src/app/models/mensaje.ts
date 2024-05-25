@@ -1,7 +1,7 @@
 export class Mensaje {
     usuario : string = "";
-    hora : string = "";
+    fecha : string = "";
     mensaje : string = "";
 
-    constructor(usuario : string, hora : string, mensaje:""){}
+    constructor(usuario : string, fecha : string, mensaje:""){}
 }

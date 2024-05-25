@@ -44,35 +44,50 @@
   overflow: auto;
 }
 
+.first-chat-container,
+.second-chat-container {
+  margin-bottom: 14px;
+}
+
+.first-chat-container .encabezado_msj,
+.second-chat-container .encabezado_msj {
+  display: block;
+  margin-bottom: 2px;
+}
+
 .first-chat {
-  width: 200px;
-  float: right;
+  width: 250px;
+  margin-left: auto;
   background-color: #fd7ddb;
   padding: 10px;
-  margin: 14px 0px;
   border-radius: 5px;
   color: white;
+  position: relative;
 }
 
 .first-chat p {
-  font-size: 12px;
+  font-size: 15px;
   overflow-wrap: break-word;
+}
+
+.second-chat-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .second-chat {
-  display: inline-block;
+  width: 250px;
+  background-color: #ecf1fb;
+  padding: 12px;
+  border-radius: 10px;
+  color: #000;
+  position: relative;
 }
 
 .second-chat p {
-  font-size: 12px;
+  font-size: 15px;
   overflow-wrap: break-word;
-  width: 200px;
-  float: left;
-  background-color: #ecf1fb;
-  padding: 12px;
-  margin: 14px 0px;
-  border-radius: 10px;
-  color: #000;
 }
 
 .second-chat .arrow {
@@ -95,7 +110,7 @@
   left: 0;
   right: 0;
   padding: 0px 15px;
-  padding-bottom: 18px;
+  padding-bottom: 10px;
   border-top: 1px solid lightgray;
   width: 100%;
 }
@@ -123,7 +138,7 @@
   outline: none;
 }
 
-.send-button{
+.send-button {
   position: fixed;
   background-image: url('../../../assets/send.png');
   background-size: contain;
@@ -132,4 +147,17 @@
   height: 22px;
   cursor: pointer;
   border: none;
+}
+
+.encabezado_msj {
+  font-size: 7px;
+  text-align: left;
+}
+
+.encabezado_msj.propio {
+  color: white;
+}
+
+.encabezado_msj.ajeno {
+  color: #fd7ddb;
 }

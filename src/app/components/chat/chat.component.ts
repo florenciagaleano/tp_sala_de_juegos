@@ -20,12 +20,14 @@ export class ChatComponent {
   private sub!:Subscription;
   nuevoMensaje: string = '';
   usuarioActual: string | null = null;
+  esInvitado = false;
 
   constructor(private authService: AuthService,private firestore : Firestore){}
 
   ngOnInit() {
     this.usuarioActual = this.authService.getCurrentUser();
     this.getMensajes();
+    if(this.usuarioActual == 'invitado@gmail.com') this.esInvitado = true;
   }
 
   abrirChat(){
@@ -48,5 +50,14 @@ export class ChatComponent {
     this.nuevoMensaje = "";
     this.getMensajes();
   }
+
+  formatearFecha(fecha: Date): string {
+    const opcionesFecha: Intl.DateTimeFormatOptions = { day: '2-digit', month: '2-digit' };
+    const opcionesHora: Intl.DateTimeFormatOptions = { hour: '2-digit', minute: '2-digit' };
+    const fechaFormateada = fecha.toLocaleDateString('es-ES', opcionesFecha);
+    const horaFormateada = fecha.toLocaleTimeString('es-ES', opcionesHora);
+    return `${fechaFormateada} ${horaFormateada}`;
+  }
+
 
 }
