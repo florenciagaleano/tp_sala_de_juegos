@@ -34,7 +34,7 @@ export class PreguntadosComponent {
     this.gano = false;
     this.intentos = 0;
     this.intentosFallidos = "💗 💗 💗 "
-
+    this.contador = 0;
     this.nuevaPregunta();
   }
 
@@ -57,6 +57,8 @@ export class PreguntadosComponent {
   verificarRespuesta(opcion: string) {
     if (opcion != this.correcta) {
       this.intentos++;
+    }else{
+      this.contador ++;
     }
     this.actualizarVidas();
     this.nuevaPregunta();
@@ -70,7 +72,6 @@ export class PreguntadosComponent {
     }else if(this.contador == 10){
       this.gano = true;
     }
-    this.contador ++;
 
     for (let index = 0; index < 3 - this.intentos; index++) {
       this.intentosFallidos += "💗 ";

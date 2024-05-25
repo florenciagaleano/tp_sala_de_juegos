@@ -20,7 +20,8 @@ export class CartasComponent {
   intentosFallidos = "💗 💗 💗 💗 💗 💗 💗 💗 💗 "
   mayorSeleccionado = false;
   perdio = false;
-  
+  gano = false;
+  contador = 0;
   constructor(private cardService: CartasService, private router : Router) { }
 
   ngOnInit(): void {
@@ -32,8 +33,9 @@ export class CartasComponent {
     this.intentosFallidos = "💗 💗 💗 💗 💗 💗 💗 💗 💗 "
     this.mayorSeleccionado = false;
     this.perdio = false;
+    this.gano = false;
     this.getNewCard();
-
+    this.contador = 0;
   }
 
   async getNewCard() {
@@ -55,7 +57,16 @@ export class CartasComponent {
     const result = await this.cardService.cardIsHigher(this.currentCard, this.nextCard);
     if(!((result && this.mayorSeleccionado) || (!result && !this.mayorSeleccionado))){
       this.intentos++;
+    }else{
+      this.contador++;
     }
+
+    if(this.intentos == 9){
+      this.perdio = true;
+    }else if(this.contador == 10){
+      this.gano = true;
+    }
+
     this.currentCard = this.nextCard;
     this.nextCard = await this.cardService.getCard();
     this.actualizarVidas();

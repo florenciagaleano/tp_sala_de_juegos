@@ -15,7 +15,7 @@
   </div> 
   <div class="row" id="intentos">
     <div class="col text-center">
-      <h3>Intentos: <small>{{intentosFallidos}}</small></h3>
+      Intentos: <small>{{ intentosFallidos }}</small><span> | </span> Contador: {{ contador }}
     </div>
   </div>
   <div class="row" *ngIf="gano" id="gano">

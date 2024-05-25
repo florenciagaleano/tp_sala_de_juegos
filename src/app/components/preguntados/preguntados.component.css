@@ -65,7 +65,8 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(238, 31, 190, 0.5);
+  color: white;
+  background-color: rgba(238, 31, 190, 0.7);
 }
 
 button,

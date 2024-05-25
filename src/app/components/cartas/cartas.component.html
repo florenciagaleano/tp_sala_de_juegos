@@ -7,25 +7,32 @@
 </head>
 <body id="background">
   <h1 id="titulo"> Mayor o Menor </h1>
-  <div *ngIf="currentCard && intentos < 9">
+  <div *ngIf="currentCard && !gano && !perdio">
     <img src="{{currentCard.image}}" alt="">
     <div>
       <div>La carta que sigue es...</div>
       <button (click)="seleccionarMayor()" class="btn">Mayor</button>
       <button (click)="seleccionarMenor()" class="btn">Menor</button>
     </div>
-    <h2 id="intentos">Vidas: {{ intentosFallidos }}</h2>
+    <h2 id="intentos">Intentos: <small>{{ intentosFallidos }}</small><span> | </span> Contador: {{ contador }}</h2>
   </div>
-  <div class="row" *ngIf="intentos == 9" id="perdio">
+  <div class="row" *ngIf="gano" id="gano">
     <div class="col text-center">
-      <h3>Perdiste 💔</h3>
+      <h1>Ganaste! 🤗</h1>
       <div class="container">
-        <button
-        class="button-resultados" type="submit" (click)="goTo('home')">Ir a home</button>
+        <button type="submit" (click)="goTo('home')">Ir a home</button>
         <span>|</span>
+        <button type="submit" (click)="goTo()">Volver a jugar</button>  
+      </div>    
+    </div>
+  </div>
+  <div class="row" *ngIf="perdio" id="perdio">
+    <div class="col text-center">
+      <h1>Perdiste 💔</h1>
+      <div class="container">
+        <button class="button-resultados" type="submit" (click)="goTo('home')">Ir a home</button>
         <button class="button-resultados" type="submit" (click)="reiniciar()">Volver a jugar</button>  
       </div>    
-
     </div>
   </div>
   <app-logout></app-logout> 
