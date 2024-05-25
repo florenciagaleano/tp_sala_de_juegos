@@ -86,4 +86,11 @@ button, span{
 button:hover{  
     cursor: pointer;
     text-decoration: underline;
-  }
+}
+
+img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 20px auto;
+}

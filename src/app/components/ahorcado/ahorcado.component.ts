@@ -29,7 +29,8 @@ export class AhorcadoComponent {
   intentos = 0;
   gano = false;
   perdio = false;
-  intentosFallidos = "💗 💗 💗 💗 💗 💗 💗 💗 💗 "
+  intentosFallidos = "💗 💗 💗 💗 💗 💗 ";
+  imagenAhorcado = '../../../assets/ahorcado/ahorcado_0.png';
   letras = [
     "a",
     "b",
@@ -92,7 +93,7 @@ export class AhorcadoComponent {
       this.gano = true;
       console.log("Usuario GANO");
     }
-    if (this.intentos === 9) {
+    if (this.intentos === 6) {
       this.perdio = true;
       console.log("Usuario perdio");
     }
@@ -100,9 +101,11 @@ export class AhorcadoComponent {
 
   actualizarVidas(){
     this.intentosFallidos = "";
-    for (let index = 0; index < 9 - this.intentos; index++) {
+    for (let index = 0; index < 6 - this.intentos; index++) {
       this.intentosFallidos += "💗 ";
     }
+
+    this.imagenAhorcado = `../../../assets/ahorcado/ahorcado_${this.intentos}.png`; // Actualiza la imagen en función de los intentos
   }
 
   existeLetra(letra: string) {
