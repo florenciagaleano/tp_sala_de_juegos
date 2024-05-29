@@ -7,6 +7,7 @@
 <body id="background">
   <h1>Preguntados</h1>
   <div *ngIf="pregunta && !gano && !perdio">
+    <div class="pregunta">¿A que pelicula pertenece la siguiente foto?</div>
     <div *ngIf="cargando" class="spinner"></div>
     <img [src]="imagen" alt="Imagen de la película" class="img-pelicula" />
     <div *ngFor="let opcion of opciones">

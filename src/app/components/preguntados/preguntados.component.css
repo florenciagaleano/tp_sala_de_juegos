@@ -18,9 +18,15 @@ h1 {
 }
 
 .img-pelicula {
-  width: 40%;
-  height: 40%;
+  width: 30%;
+  height: 30%;
   border: 6px solid #d067c9;
+}
+
+.pregunta{
+  color: #ffffff;
+  font-size: 30px;
+
 }
 
 .btn-opcion {
@@ -66,6 +72,7 @@ h1 {
   justify-content: center;
   align-items: center;
   color: white;
+  font-size: 30px;
   background-color: rgba(238, 31, 190, 0.7);
 }
 

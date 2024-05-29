@@ -129,6 +129,7 @@ export class AhorcadoComponent {
     this.perdio = false;
     this.intentosFallidos = "💗 💗 💗 💗 💗 💗 💗 💗 💗 ";
     this.palabraOculta = "_ ".repeat(this.palabra.length);
+    this.imagenAhorcado = '../../../assets/ahorcado/ahorcado_0.png';
 
   }
 }
